@@ -190,10 +190,10 @@ export default function Home() {
       <section className="discover section" id="mazury">
         <div className="section-heading-row"><div><p className="eyebrow dark">Blisko natury</p><h2>Odkrywaj Mazury</h2></div><p>Wybierz własne tempo. Z domu ruszysz prosto na leśną drogę, nad wodę albo przed siebie.</p></div>
         <div className="activity-grid">
-          <article className="activity activity-bike"><div><span>01</span><h3>Na rower</h3><p>Szutrowe drogi i spokojne trasy między jeziorami.</p></div></article>
-          <article className="activity activity-water"><div><span>02</span><h3>Nad wodę</h3><p>Poranne kąpiele, kajaki i pomosty tylko dla cierpliwych.</p></div></article>
-          <article className="activity activity-walk"><div><span>03</span><h3>Na spacer</h3><p>Leśne ścieżki, ślady zwierząt i zapach sosen.</p></div></article>
-          <article className="activity activity-local"><div><span>04</span><h3>Nasze miejsca</h3><p>Małe przystanie, lokalne smaki i widoki bez tłumów.</p></div></article>
+          <article className="activity activity-bike"><Image className="activity-image" src="/images/na-rower.webp" alt="Trasa rowerowa w okolicy Elganowa" fill sizes="(max-width: 500px) 78vw, (max-width: 1000px) 50vw, 25vw" quality={82} /><div><span>01</span><h3>Na rower</h3><p>Szutrowe drogi i spokojne trasy między jeziorami.</p></div></article>
+          <article className="activity activity-water"><Image className="activity-image" src="/images/nad-wode.webp" alt="Plaża nad jeziorem na Mazurach" fill sizes="(max-width: 500px) 78vw, (max-width: 1000px) 50vw, 25vw" quality={82} /><div><span>02</span><h3>Nad wodę</h3><p>Poranne kąpiele, kajaki i pomosty tylko dla cierpliwych.</p></div></article>
+          <article className="activity activity-walk"><Image className="activity-image" src="/images/na-spacer.webp" alt="Leśna trasa spacerowa w okolicy Elganowa" fill sizes="(max-width: 500px) 78vw, (max-width: 1000px) 50vw, 25vw" quality={82} /><div><span>03</span><h3>Na spacer</h3><p>Leśne ścieżki, ślady zwierząt i zapach sosen.</p></div></article>
+          <article className="activity activity-local"><Image className="activity-image" src="/images/nasze-miejsca.webp" alt="Polecane miejsca w okolicy Elganowa" fill sizes="(max-width: 500px) 78vw, (max-width: 1000px) 50vw, 25vw" quality={82} /><div><span>04</span><h3>Nasze miejsca</h3><p>Małe przystanie, lokalne smaki i widoki bez tłumów.</p></div></article>
         </div>
       </section>
 

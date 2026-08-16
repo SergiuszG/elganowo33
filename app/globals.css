@@ -78,17 +78,18 @@ h2 { margin:0; font:400 clamp(42px,5vw,72px)/1.02 Georgia,'Times New Roman',seri
 .section-heading-row { display:flex; justify-content:space-between; align-items:flex-end; gap:60px; max-width:1450px; margin:0 auto 48px; }
 .section-heading-row>p { max-width:460px; margin:0 0 6px; color:#65675e; line-height:1.65; }
 .activity-grid { max-width:1450px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.activity { min-height:470px; position:relative; overflow:hidden; display:flex; align-items:flex-end; color:white; background-size:cover; background-position:center; }
-.activity::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(13,18,10,.78),rgba(13,18,10,.03) 65%); transition:background .25s; }
+.activity { min-height:470px; position:relative; overflow:hidden; display:flex; align-items:flex-end; color:white; }
+.activity-image { object-fit:cover; }
+.activity::before { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(0deg,rgba(13,18,10,.78),rgba(13,18,10,.03) 65%); transition:background .25s; }
 .activity:hover::before { background:linear-gradient(0deg,rgba(13,18,10,.86),rgba(13,18,10,.1) 70%); }
-.activity>div { position:relative; z-index:1; padding:26px; }
+.activity>div { position:relative; z-index:2; padding:26px; }
 .activity span { font-size:11px; letter-spacing:.16em; opacity:.74; }
 .activity h3 { margin:9px 0 8px; font:400 31px Georgia,serif; }
 .activity p { margin:0; max-width:250px; line-height:1.5; opacity:.86; font-size:14px; }
-.activity-bike { background-image:url('/images/masuria.png'); background-position:18% center; }
-.activity-water { background-image:url('/images/terrace.png'); }
-.activity-walk { background-image:url('/images/hero.png'); background-position:75% center; }
-.activity-local { background-image:url('/images/masuria.png'); background-position:78% center; }
+.activity-bike .activity-image { object-position:50% 54%; }
+.activity-water .activity-image { object-position:50% 55%; }
+.activity-walk .activity-image { object-position:50% 52%; }
+.activity-local .activity-image { object-position:50% 48%; }
 .manifesto { min-height:520px; position:relative; display:grid; place-items:center; text-align:center; color:white; background:url('/images/terrace.png') center 54%/cover no-repeat fixed; }
 .manifesto::before { content:""; position:absolute; inset:0; background:rgba(18,24,15,.5); }
 .manifesto div { position:relative; z-index:1; padding:30px; }
