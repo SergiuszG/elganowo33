@@ -1,0 +1,12 @@
+.npm-cache
+.openai
+.vinext
+.wrangler
+dist
+db
+drizzle
+examples
+tests
+worker
+vite.config.ts
+drizzle.config.ts
