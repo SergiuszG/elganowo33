@@ -68,7 +68,7 @@ h2 { margin:0; font:400 clamp(42px,5vw,72px)/1.02 Georgia,'Times New Roman',seri
 .gallery-header h2 { font-size:clamp(28px,3vw,43px); letter-spacing:-.02em; }
 .gallery-counter { margin:0; color:#d4d9d0; font:18px Georgia,serif; font-variant-numeric:tabular-nums; }
 .gallery-close { width:48px; height:48px; display:grid; place-items:center; padding:0; border:1px solid rgba(255,255,255,.38); border-radius:50%; background:transparent; color:white; font:300 30px/1 Arial,sans-serif; cursor:pointer; }
-.gallery-stage { min-width:0; min-height:0; display:grid; place-items:center; overflow:hidden; background:#11150f; touch-action:pan-y; }
+.gallery-stage { min-width:0; min-height:0; position:relative; display:grid; place-items:center; overflow:hidden; background:#11150f; touch-action:pan-y; }
 .gallery-image { object-fit:contain; user-select:none; -webkit-user-drag:none; }
 .gallery-controls { min-height:76px; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding-top:16px; }
 .gallery-controls button { min-width:150px; min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:16px; padding:0 20px; border:1px solid rgba(255,255,255,.35); border-radius:2px; background:transparent; color:white; font:600 12px Arial,sans-serif; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; }
