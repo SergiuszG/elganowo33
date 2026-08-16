@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elganowo33.pl"),
+  metadataBase: new URL("https://elganowo33.pl/"),
   title: "Elganowo 33 — dom na Mazurach",
   description: "Kameralny dom wśród mazurskich jezior, lasów i ciszy.",
   openGraph: {
     title: "Elganowo 33 — dom na Mazurach",
     description: "Tu rano słychać żurawie. Kameralny dom wśród mazurskich jezior, lasów i ciszy.",
-    url: "https://elganowo33.pl",
+    url: "https://elganowo33.pl/",
     siteName: "Elganowo 33",
     locale: "pl_PL",
     type: "website",

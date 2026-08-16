@@ -1,27 +1,71 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { MobileMenu } from "./mobile-menu";
 import { ReservationForm } from "./reservation-form";
 
 export const metadata: Metadata = {
   title: "Elganowo 33 — dom na Mazurach",
   description: "Kameralny dom wśród mazurskich jezior, lasów i ciszy.",
+  alternates: {
+    canonical: "https://elganowo33.pl/",
+  },
+};
+
+const vacationRentalStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "@id": "https://elganowo33.pl/#vacation-rental",
+  name: "Elganowo 33",
+  url: "https://elganowo33.pl/",
+  description: "Kameralny dom wśród mazurskich jezior, lasów i ciszy.",
+  image: [
+    "https://elganowo33.pl/images/elganowo33-dom.jpg",
+    "https://elganowo33.pl/images/elganowo33-wnetrza.jpg",
+    "https://elganowo33.pl/images/elganowo33-taras.jpg",
+    "https://elganowo33.pl/images/elganowo33-okolica.jpg",
+  ],
+  containsPlace: {
+    "@type": "Accommodation",
+    name: "Elganowo 33",
+    additionalType: "EntirePlace",
+    accommodationCategory: "Dom na wyłączność",
+    numberOfBedrooms: 4,
+    occupancy: {
+      "@type": "QuantitativeValue",
+      value: 8,
+      maxValue: 8,
+      unitText: "osób",
+    },
+  },
 };
 
 export default function Home() {
   return (
     <main>
+      <script
+        id="vacation-rental-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(vacationRentalStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="topbar">
         <a className="brand" href="#dom" aria-label="Elganowo 33 — strona główna">
           <span className="brand-mark">E33</span>
           <span><strong>Elganowo 33</strong><small>dom na Mazurach</small></span>
         </a>
-        <nav aria-label="Główna nawigacja">
+        <nav className="desktop-nav" aria-label="Główna nawigacja">
           <a href="#dom">Dom</a>
           <a href="#galeria">Galeria</a>
           <a href="#mazury">Odkrywaj Mazury</a>
           <a href="#historia">Historia</a>
           <a className="nav-cta" href="#formularz-rezerwacji">Zapytaj o termin</a>
         </nav>
+        <div className="mobile-header-actions">
+          <Link className="nav-cta" href="/#formularz-rezerwacji">Zapytaj o termin</Link>
+          <MobileMenu />
+        </div>
       </header>
 
       <section className="hero" id="dom">

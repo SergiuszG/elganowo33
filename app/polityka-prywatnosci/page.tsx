@@ -4,6 +4,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Polityka prywatności — Elganowo 33",
   description: "Informacje o przetwarzaniu danych przesyłanych w formularzu Elganowo 33.",
+  alternates: {
+    canonical: "/polityka-prywatnosci",
+  },
+  openGraph: {
+    title: "Polityka prywatności — Elganowo 33",
+    description: "Informacje o przetwarzaniu danych przesyłanych w formularzu Elganowo 33.",
+    url: "/polityka-prywatnosci",
+    siteName: "Elganowo 33",
+    locale: "pl_PL",
+    type: "website",
+    images: [{ url: "/og.png", width: 1733, height: 907, alt: "Elganowo 33 — Tu rano słychać żurawie." }],
+  },
 };
 
 export default function PrivacyPolicy() {

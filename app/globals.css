@@ -10,10 +10,19 @@ a { color:inherit; text-decoration:none; }
 .brand-mark { width:44px; height:44px; display:grid; place-items:center; border:1px solid #66705d; border-radius:50%; font:600 13px Georgia,serif; letter-spacing:.04em; }
 .brand strong { display:block; font:500 22px/1 Georgia,serif; }
 .brand small { display:block; margin-top:6px; color:#72746c; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
-nav { display:flex; align-items:center; gap:32px; font-size:14px; }
-nav a { transition:opacity .2s; } nav a:hover { opacity:.62; }
+.desktop-nav { display:flex; align-items:center; gap:32px; font-size:14px; }
+.desktop-nav a { transition:opacity .2s; } .desktop-nav a:hover { opacity:.62; }
 .nav-cta,.button-primary { background:var(--ink); color:white; border-radius:3px; }
 .nav-cta { padding:15px 22px; }
+.mobile-header-actions { display:none; }
+.mobile-menu-toggle { width:46px; height:46px; display:grid; place-items:center; padding:0; border:1px solid #cfcabe; border-radius:3px; background:transparent; color:var(--ink); cursor:pointer; }
+.mobile-menu-icon { width:20px; display:flex; flex-direction:column; gap:4px; }
+.mobile-menu-icon span { display:block; height:1px; background:currentColor; }
+.mobile-menu-panel { position:fixed; z-index:19; top:74px; left:0; right:0; padding:10px 22px 18px; border-top:1px solid #ded8cc; border-bottom:1px solid #d4cec1; background:rgba(251,248,241,.98); box-shadow:0 18px 32px rgba(28,31,24,.12); }
+.mobile-menu-panel[hidden] { display:none; }
+.mobile-menu-panel a { min-height:48px; display:flex; align-items:center; border-bottom:1px solid #e1dbcf; font-size:15px; }
+.mobile-menu-panel a:last-child { border-bottom:0; }
+.mobile-menu-toggle:focus-visible,.mobile-menu-panel a:focus-visible { outline:2px solid var(--sage); outline-offset:3px; }
 .hero { min-height:calc(100svh - 84px); position:relative; display:flex; align-items:center; color:white; background:#293023; overflow:hidden; }
 .hero-image { object-fit:cover; object-position:center 55%; }
 .hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(15,19,12,.62) 0%,rgba(15,19,12,.26) 43%,rgba(15,19,12,.04) 72%),linear-gradient(0deg,rgba(13,16,10,.35),transparent 45%); }
@@ -28,8 +37,8 @@ h1 { margin:0; max-width:720px; font:400 clamp(60px,7.7vw,116px)/.93 Georgia,'Ti
 .text-link span { margin-left:8px; }
 .scroll-cue { position:absolute; z-index:1; right:48px; bottom:34px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
 .scroll-cue span { margin-left:8px; }
-@media(max-width:900px){ nav a:not(.nav-cta){display:none}.topbar{height:74px}.hero{min-height:calc(100svh - 74px)}.hero-content{padding-bottom:120px}.scroll-cue{display:none} }
-@media(max-width:560px){ .brand strong{font-size:19px}.brand small{display:none}.brand-mark{width:38px;height:38px}.nav-cta{padding:12px 14px;font-size:12px}h1{font-size:clamp(52px,16vw,76px)}.lead{max-width:300px}.hero-actions{align-items:flex-start;flex-direction:column;gap:10px}.hero-image{object-position:70% center}.hero-shade{background:linear-gradient(90deg,rgba(15,19,12,.7),rgba(15,19,12,.16))}}
+@media(max-width:900px){.topbar{height:74px;position:sticky;top:0}.desktop-nav{display:none}.mobile-header-actions{display:flex;align-items:center;gap:8px}.hero{min-height:calc(100svh - 74px)}.hero-content{padding-bottom:120px}.scroll-cue{display:none} }
+@media(max-width:560px){ .topbar{padding:0 14px}.brand{gap:10px}.brand strong{font-size:19px}.brand small{display:none}.brand-mark{width:38px;height:38px}.nav-cta{padding:12px 11px;font-size:11px}h1{font-size:clamp(52px,16vw,76px)}.lead{max-width:300px}.hero-actions{align-items:flex-start;flex-direction:column;gap:10px}.hero-image{object-position:70% center}.hero-shade{background:linear-gradient(90deg,rgba(15,19,12,.7),rgba(15,19,12,.16))}}
 
 .section { padding:clamp(84px,10vw,150px) clamp(24px,5vw,82px); }
 .intro { text-align:center; overflow:hidden; }
@@ -134,5 +143,5 @@ footer { display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:50px; padding:62
 @media(max-width:1000px){.feature-grid{grid-template-columns:repeat(2,1fr)}.feature-card:last-child{grid-column:1/-1}.feature-card:last-child .image-wrap{aspect-ratio:2/1}.activity-grid{grid-template-columns:repeat(2,1fr)}.activity{min-height:430px}.story{grid-template-columns:1fr 1fr}.story-photo{height:600px}}
 @media(max-width:760px){.section{padding:76px 22px}.section-lead{margin-bottom:45px}.feature-grid{display:block}.feature-card,.feature-card.lift{transform:none;margin-bottom:44px}.feature-card:last-child .image-wrap{aspect-ratio:4/3}.facts{margin-top:45px;grid-template-columns:repeat(2,1fr);row-gap:30px}.facts div:nth-child(2){border:0}.section-heading-row{display:block}.section-heading-row>p{margin-top:20px}.activity-grid{grid-template-columns:1fr 1fr}.activity{min-height:350px}.manifesto{min-height:430px;background-attachment:scroll}.story{display:flex;flex-direction:column;padding-left:0;padding-right:0}.story-photo{width:100%;height:440px}.story-copy{padding:0 22px}.availability{min-height:500px}footer{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
 @media(max-width:500px){.activity-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-22px;padding-right:22px}.activity{min-width:78vw;scroll-snap-align:start}.facts strong{font-size:36px}.facts span{font-size:10px}.story-photo{height:360px}.reservation-dialog{width:calc(100% - 16px);max-height:calc(100dvh - 16px)}.reservation-heading{padding:52px 22px 26px}.reservation-form{grid-template-columns:1fr;padding:28px 22px 36px}.reservation-field-wide,.reservation-error{grid-column:auto}.reservation-submit{width:100%}.reservation-required{justify-self:center}.reservation-success{min-height:430px;padding:64px 26px 36px}footer{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{grid-column:auto}}
-@media(max-width:900px){.intro,.availability,.reservation-anchor{scroll-margin-top:74px}}
+@media(max-width:900px){.hero,.intro,.discover,.story,.availability,.reservation-anchor{scroll-margin-top:74px}}
 @media(prefers-reduced-motion:reduce){.reservation-dialog[open]{animation:none}}
