@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-const FORM_ENDPOINT = "https://formspree.io/f/xojbrolp";
+const FORM_ENDPOINT = "https://formspree.io/f/mvkpbwyn";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
