@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FeatureGallery } from "./feature-gallery";
 import { MobileMenu } from "./mobile-menu";
 import { ReservationForm } from "./reservation-form";
+import { StorySection } from "./story-section";
 
 export const metadata: Metadata = {
   title: "Elganowo 33 — dom na Mazurach",
@@ -189,16 +190,7 @@ export default function Home() {
         <div><p>Wieczorem ognisko.</p><p>Rano kawa na tarasie.</p><p>W ciągu dnia jeziora, las i cisza.</p></div>
       </section>
 
-      <section className="story section" id="historia">
-        <div className="story-photo"><img src="/images/hero.png" alt="Dom Elganowo 33 o wschodzie słońca" /></div>
-        <div className="story-copy">
-          <p className="eyebrow dark">Nasza historia</p>
-          <h2>Dom, który wyrósł z zachwytu</h2>
-          <p>Najpierw była cisza, widok na wodę i żurawie wracające co roku na łąki. Potem pojawił się dom — prosty, ciepły i mocno związany z krajobrazem.</p>
-          <p>Elganowo 33 stworzyliśmy jako miejsce spotkań i odpoczynku. Dzielimy się nim z tymi, którzy podobnie jak my lubią bliskość natury, dobre wnętrza i niespieszne poranki.</p>
-          <a className="story-link" href="#kontakt">Zaplanuj swój pobyt <span>→</span></a>
-        </div>
-      </section>
+      <StorySection />
 
       <section className="availability" id="kontakt">
         <div className="availability-inner">
