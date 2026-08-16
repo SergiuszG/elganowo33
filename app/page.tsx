@@ -16,6 +16,7 @@ const vacationRentalStructuredData = {
   "@context": "https://schema.org",
   "@type": "VacationRental",
   "@id": "https://elganowo33.pl/#vacation-rental",
+  additionalType: "House",
   identifier: "ELG33-001",
   name: "Elganowo 33",
   alternateName: "Na Żurawim Wzgórzu",
