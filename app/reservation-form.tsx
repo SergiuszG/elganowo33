@@ -172,7 +172,7 @@ export function ReservationForm() {
 
               <div className="reservation-field reservation-field-wide">
                 <label htmlFor="reservation-guests">Liczba osób <span>*</span></label>
-                <input id="reservation-guests" name="guests" type="number" min="1" max="8" defaultValue="2" required />
+                <input id="reservation-guests" name="guests" type="number" min="1" max="7" defaultValue="2" required />
               </div>
 
               <div className="reservation-field reservation-field-wide">
