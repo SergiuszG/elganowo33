@@ -16,8 +16,11 @@ const vacationRentalStructuredData = {
   "@context": "https://schema.org",
   "@type": "VacationRental",
   "@id": "https://elganowo33.pl/#vacation-rental",
+  identifier: "ELG33-001",
   name: "Elganowo 33",
+  alternateName: "Na Żurawim Wzgórzu",
   url: "https://elganowo33.pl/",
+  telephone: "+48606454812",
   description: "Kameralny dom wśród mazurskich jezior, lasów i ciszy.",
   image: [
     "https://elganowo33.pl/images/elganowo33-dom.jpg",
@@ -25,18 +28,49 @@ const vacationRentalStructuredData = {
     "https://elganowo33.pl/images/elganowo33-taras.jpg",
     "https://elganowo33.pl/images/elganowo33-okolica.jpg",
   ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Elganowo 33",
+    postalCode: "12-130",
+    addressLocality: "Elganowo",
+    addressRegion: "warmińsko-mazurskie",
+    addressCountry: "PL",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 53.6492718,
+    longitude: 20.8636563,
+  },
+  checkinTime: "15:00",
+  checkoutTime: "11:00",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "reservations",
+    telephone: "+48606454812",
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      opens: "08:00",
+      closes: "20:00",
+    },
+  },
   containsPlace: {
     "@type": "Accommodation",
     name: "Elganowo 33",
     additionalType: "EntirePlace",
     accommodationCategory: "Dom na wyłączność",
-    numberOfBedrooms: 4,
+    numberOfBedrooms: 3,
     occupancy: {
       "@type": "QuantitativeValue",
-      value: 8,
-      maxValue: 8,
+      value: 7,
+      maxValue: 7,
       unitText: "osób",
     },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "kitchen", value: true },
+      { "@type": "LocationFeatureSpecification", name: "ovenStove", value: true },
+      { "@type": "LocationFeatureSpecification", name: "washerDryer", value: true },
+      { "@type": "LocationFeatureSpecification", name: "fireplace", value: true },
+    ],
   },
 };
 
@@ -113,10 +147,42 @@ export default function Home() {
         </div>
 
         <div className="facts" aria-label="Najważniejsze informacje o domu">
-          <div><strong>8</strong><span>gości</span></div>
-          <div><strong>4</strong><span>sypialnie</span></div>
+          <div><strong>7</strong><span>gości</span></div>
+          <div><strong>3</strong><span>sypialnie</span></div>
           <div><strong>1</strong><span>dom na wyłączność</span></div>
           <div><strong>∞</strong><span>spokoju</span></div>
+        </div>
+
+        <div className="house-details">
+          <section className="equipment" aria-labelledby="equipment-heading">
+            <p className="eyebrow dark">Wyposażenie</p>
+            <h3 id="equipment-heading">W domu znajdziecie</h3>
+            <ul>
+              <li>Lodówkę</li>
+              <li>Pralkę</li>
+              <li>Opiekacz</li>
+              <li>Kuchnię gazową</li>
+              <li>Czajnik elektryczny</li>
+              <li>Ekspres do kawy</li>
+              <li>Ręczniki</li>
+              <li>Pościel</li>
+              <li>Zastawę stołową</li>
+              <li>Miejsce na ognisko</li>
+              <li>Suszarkę do włosów</li>
+              <li>Panoramiczny kominek z wkładem Jøtul</li>
+            </ul>
+          </section>
+
+          <section className="practical-info" aria-labelledby="practical-info-heading">
+            <p className="eyebrow dark">Informacje praktyczne</p>
+            <h3 id="practical-info-heading">Przed przyjazdem</h3>
+            <dl>
+              <div><dt>Lokalizacja</dt><dd>Elganowo 33, 12-130 Elganowo, gmina Pasym</dd></div>
+              <div><dt>Kontakt</dt><dd><a href="tel:+48606454812">+48 606 454 812</a>, w godzinach 8:00–20:00</dd></div>
+              <div><dt>Zameldowanie</dt><dd>od 15:00</dd></div>
+              <div><dt>Wymeldowanie</dt><dd>do 11:00</dd></div>
+            </dl>
+          </section>
         </div>
       </section>
 
