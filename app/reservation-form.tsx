@@ -30,6 +30,16 @@ export function ReservationForm() {
   }, []);
 
   useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === "#formularz-rezerwacji") setIsOpen(true);
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
+
+  useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
@@ -40,6 +50,9 @@ export function ReservationForm() {
   function closeDialog() {
     setIsOpen(false);
     setStatus("idle");
+    if (window.location.hash === "#formularz-rezerwacji") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
   }
 
   function handleArrivalChange(value: string) {
@@ -70,13 +83,13 @@ export function ReservationForm() {
   }
 
   return (
-    <>
+    <div id="formularz-rezerwacji" className="reservation-anchor">
       <button
         className="button button-light"
         type="button"
         onClick={() => setIsOpen(true)}
       >
-        Zapytaj o rezerwację <span aria-hidden="true">→</span>
+        Zapytaj o termin <span aria-hidden="true">→</span>
       </button>
 
       <dialog
@@ -182,10 +195,13 @@ export function ReservationForm() {
                 {status === "sending" ? "Wysyłanie…" : "Wyślij zapytanie"}
               </button>
               <p className="reservation-required"><span>*</span> pola wymagane</p>
+              <p className="reservation-privacy">
+                Dane podane w formularzu wykorzystamy wyłącznie do obsługi Twojego zapytania o termin. Szczegóły znajdziesz w <a href="/polityka-prywatnosci">Polityce prywatności</a>.
+              </p>
             </form>
           </>
         )}
       </dialog>
-    </>
+    </div>
   );
 }

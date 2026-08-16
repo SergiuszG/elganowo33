@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ReservationForm } from "./reservation-form";
 
 export const metadata: Metadata = {
@@ -19,18 +20,27 @@ export default function Home() {
           <a href="#galeria">Galeria</a>
           <a href="#mazury">Odkrywaj Mazury</a>
           <a href="#historia">Historia</a>
-          <a className="nav-cta" href="#kontakt">Sprawdź dostępność</a>
+          <a className="nav-cta" href="#formularz-rezerwacji">Zapytaj o termin</a>
         </nav>
       </header>
 
       <section className="hero" id="dom">
+        <Image
+          className="hero-image"
+          src="/images/elganowo33-dom.jpg"
+          alt="Dom Elganowo 33 na Mazurach"
+          fill
+          sizes="100vw"
+          quality={82}
+          preload
+        />
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">Elganowo · Mazury</p>
           <h1>Tu rano<br />słychać żurawie.</h1>
           <p className="lead">Dom na Mazurach, do którego chce się wracać.</p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#kontakt">Sprawdź dostępność</a>
+            <a className="button button-primary" href="#formularz-rezerwacji">Zapytaj o termin</a>
             <a className="text-link" href="#galeria">Poznaj dom <span>↓</span></a>
           </div>
         </div>
@@ -45,15 +55,15 @@ export default function Home() {
 
         <div className="feature-grid">
           <article className="feature-card">
-            <div className="image-wrap"><img src="/images/interior.png" alt="Jasny salon z widokiem na mazurskie jezioro" /></div>
+            <div className="image-wrap"><Image className="feature-image-wnetrza" src="/images/elganowo33-wnetrza.jpg" alt="Wnętrza domu Elganowo 33" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(50vw - 48px), 33vw" quality={82} /></div>
             <span className="card-number">01</span><h3>Wnętrza</h3><p>Naturalne materiały, kominek i widok, który zwalnia rytm dnia.</p>
           </article>
           <article className="feature-card lift">
-            <div className="image-wrap"><img src="/images/terrace.png" alt="Drewniany taras pośród zieleni nad jeziorem" /></div>
+            <div className="image-wrap"><Image className="feature-image-taras" src="/images/elganowo33-taras.jpg" alt="Ogród i taras domu Elganowo 33" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(50vw - 48px), 33vw" quality={82} /></div>
             <span className="card-number">02</span><h3>Ogród i taras</h3><p>Poranki z kawą, długie kolacje i wieczory pod gwiazdami.</p>
           </article>
           <article className="feature-card">
-            <div className="image-wrap"><img src="/images/masuria.png" alt="Mazurskie jeziora i lasy widziane o poranku" /></div>
+            <div className="image-wrap"><Image className="feature-image-okolica" src="/images/elganowo33-okolica.jpg" alt="Okolica domu Elganowo 33 na Mazurach" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(100vw - 82px), 33vw" quality={82} /></div>
             <span className="card-number">03</span><h3>Okolica</h3><p>Jeziora, leśne ścieżki i małe miejsca, które odkrywa się bez mapy.</p>
           </article>
         </div>
@@ -103,7 +113,7 @@ export default function Home() {
       <footer>
         <a className="brand footer-brand" href="#dom"><span className="brand-mark">E33</span><span><strong>Elganowo 33</strong><small>dom na Mazurach</small></span></a>
         <div className="footer-links"><a href="#dom">Dom</a><a href="#galeria">Galeria</a><a href="#mazury">Odkrywaj Mazury</a><a href="#historia">Historia</a></div>
-        <div className="footer-contact"><span>Kontakt</span><a href="mailto:rezerwacje@elganowo33.pl">rezerwacje@elganowo33.pl</a><span>Mazury, Polska</span></div>
+        <div className="footer-contact"><span>Kontakt</span><a href="mailto:rezerwacje@elganowo33.pl">rezerwacje@elganowo33.pl</a><span>Mazury, Polska</span><a href="/polityka-prywatnosci">Polityka prywatności</a></div>
         <div className="footer-bottom"><span>© 2026 Elganowo 33</span><a href="#dom">Do góry ↑</a></div>
       </footer>
     </main>
