@@ -222,8 +222,7 @@ export function FeatureGallery() {
                 className="gallery-image"
                 src={currentImage.src}
                 alt={currentImage.alt}
-                width={currentImage.width}
-                height={currentImage.height}
+                fill
                 sizes="(max-width: 760px) 100vw, 90vw"
                 quality={82}
                 loading="eager"
