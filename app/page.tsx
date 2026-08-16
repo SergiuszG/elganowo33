@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FeatureGallery } from "./feature-gallery";
 import { MobileMenu } from "./mobile-menu";
 import { ReservationForm } from "./reservation-form";
 
@@ -132,20 +133,7 @@ export default function Home() {
         <h2>Miejsce stworzone<br />do odpoczynku</h2>
         <p className="section-lead">Na końcu spokojnej drogi czeka dom otoczony lasem, łąkami i jeziorami. Bez pośpiechu, bez tłumów — z przestrzenią na prawdziwy oddech.</p>
 
-        <div className="feature-grid">
-          <article className="feature-card">
-            <div className="image-wrap"><Image className="feature-image-wnetrza" src="/images/elganowo33-wnetrza.jpg" alt="Wnętrza domu Elganowo 33" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(50vw - 48px), 33vw" quality={82} /></div>
-            <span className="card-number">01</span><h3>Wnętrza</h3><p>Naturalne materiały, kominek i widok, który zwalnia rytm dnia.</p>
-          </article>
-          <article className="feature-card lift">
-            <div className="image-wrap"><Image className="feature-image-taras" src="/images/elganowo33-taras.jpg" alt="Ogród i taras domu Elganowo 33" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(50vw - 48px), 33vw" quality={82} /></div>
-            <span className="card-number">02</span><h3>Ogród i taras</h3><p>Poranki z kawą, długie kolacje i wieczory pod gwiazdami.</p>
-          </article>
-          <article className="feature-card">
-            <div className="image-wrap"><Image className="feature-image-okolica" src="/images/elganowo33-okolica.jpg" alt="Okolica domu Elganowo 33 na Mazurach" fill sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1000px) calc(100vw - 82px), 33vw" quality={82} /></div>
-            <span className="card-number">03</span><h3>Okolica</h3><p>Jeziora, leśne ścieżki i małe miejsca, które odkrywa się bez mapy.</p>
-          </article>
-        </div>
+        <FeatureGallery />
 
         <div className="facts" aria-label="Najważniejsze informacje o domu">
           <div><strong>7</strong><span>gości</span></div>
